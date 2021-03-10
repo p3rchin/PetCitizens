@@ -4,6 +4,9 @@
   <title>PetCitizens</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/styletable.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  
   <!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
 </head>
 
@@ -32,46 +35,59 @@
       <!-- main content -->
       <div id="intro">
         <section class="clear">
-        </section>
-      </div>
-      <div id="homepage" class="last clear">
-        <section class="one_quarter">
-          <h2 class="title">DESARROLLADORES</h2>
-        </br>
-        <article>
-          <header>
+          <div style="text-align: center">
+            <table  id="table" class="content-table" style="margin: 0 auto">
+              <thead>
+                <tr>
+                  <th>Microchip</th>
+                  <th>Species</th>
+                  <th>Sex</th>
+                  <th>Size</th>
+                  <th>Potent Dangerous</th>
+                  <th>Neighborhood</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr class="active-row">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
 
-            <h2>Santiago Acevedo Rodríguez</h2>
-            <address>
-              <a>Estudiante</a>, sacevedor@unbosque.edu.co
-            </address>
-          </br>
-        </br>
-        <h2>Fabián Camilo Gómez Céspedes</h2>
-        <address>
-          <a>Estudiante</a>, fcgomez@unbosque.edu.co
-        </address>
-      </header>
-    </article>
-  </section>
-  
-</section>
-<section class="two_quarter lastbox">
-  <h2 class="title" align="center">Acerca de esta página</h2>
-  <img class="imgl" src="data/images/logouni.jpg" width="145" height="145" alt="">
-  <p> Somos dos estudiantes del programa de ingenieria de sistemas de la universidad El bosque, estamos desarrollando un proyecto web para el curso de programacion con el profesor Fabian Peña, esperamos que les agrade bastante.</p>
-  <footer class="more"><a href="https://www.unbosque.edu.co/ingenieria/carrera/ingenieria-de-sistemas" target="_blank">Read More &raquo;</a></footer>
-</section>
-</div>
-<!-- / content body -->
-</div>
-</div>
-<!-- Footer -->
-<div class="wrapper row3">
-  <footer id="footer" class="clear">
-    <p class="fl_left">Copyright &copy; 2021 - Todos los derechos reservados - <a href="#">Pet Citizens</a></p>
-    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-  </footer>
-</div>
-</body>
-</html>
+        </div>
+        <!-- / content body -->
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="wrapper row3">
+      <footer id="footer" class="clear">
+        <p class="fl_left">Copyright &copy; 2021 - Todos los derechos reservados - <a href="#">Pet Citizens</a></p>
+        <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+      </footer>
+    </div>
+    <script  type ="text/javascript" src="js/load-csv.js" ></script>
+  </body>
+  </html>
