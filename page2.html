@@ -31,30 +31,39 @@
 	<!-- content -->
 	<div class="wrapper row2">
 		<div id="container" class="clear">
-			<form action="load-csv.js" method="get">
-				<p>Microchip: <input type="number" name="microchip" size="30"></p>
+			<form action="">
+				<p>Microchip: <input type="number" id="micro" name="microchip" size="30"></p>
 				<p>Species:
-					<input type="radio" name="especie" value="canino">Canino
-					<input type="radio" name="especie" value="felino">Felino 
+					<select id="Species" name="Species">
+						<option value="0">Seleccionar especie</option> 
+						<option value="CANINO">Canino</option> 
+						<option value="FELINO">Felino</option> 
+					</select>
 					<p>Sex:
-						<input type="radio" name="Sexo" value="hembra">Hembra
-						<input type="radio" name="Sexo" value="macho">Macho
+						<select id="sex" name="sex">
+						<option value="0">Seleccionar sexo</option> 
+						<option value="HEMBRA">Hembra</option> 
+						<option value="MACHO">Macho</option> 
+					</select>
 					</p>Size
-					<select name="size">
+					<select id="size" name="Tam">
 						<option value="0">Seleccionar tamaño</option> 
-						<option value="1">Miniatura</option> 
-						<option value="2">Pequeño</option> 
-						<option value="3">Mediano</option>
-						<option value="4">Grande</option> 
+						<option value="MINIATURA">Miniatura</option> 
+						<option value="PEQUEÑO">Pequeño</option> 
+						<option value="MEDIANO">Mediano</option>
+						<option value="GRANDE">Grande</option> 
 					</select>
 				</p>
 				<p>Potent Dangerous:
-					<input type="radio" name="booleano" value="SI">Si
-					<input type="radio" name="booleano" value="NO">No	
+					<select id="danger" name="PotentDangerous">
+						<option value="0">Seleccionar si es peligroso</option> 
+						<option value="SI">Si</option> 
+						<option value="NO">No</option> 
+					</select>
 				</p>
-				<p>Neighborhood: <input type="text" name="microchip" placeholder="Escriba la localidad" size="30"></p>
+				<p>Neighborhood: <input id="localidad" type="text" name="localidad" placeholder="Escriba la localidad" size="30"></p>
 				<p>
-					<input type="submit" value="Enviar">
+					<input name="enviar" type="button" value = "enviar" id="enviar" onclick="addPet()"/>
 					<input type="reset" value="Borrar">
 				</p>
 			</form>

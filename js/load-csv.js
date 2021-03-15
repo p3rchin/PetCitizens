@@ -48,4 +48,21 @@ function printTable(){
         tablaProducto.appendChild(cuerpoTabla);
   }
 
+  function addPet(){
+    
+  console.log("Hola");
+  var microchip = document.getElementById("micro").value;
+  var species = document.getElementById("Species").value;
+  var sex = document.getElementById("sex").value;
+  var size = document.getElementById("size").value;
+  var potentDangerous = document.getElementById("danger").value;
+  var neighborhood = document.getElementById("localidad").value;
+  // alert(microchip + " " + species + " " + sex + " " + size + " " + potentDangerous + " " + neighborhood )
+  console.log(allData[allData.length - 1]);
+    allData.push({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood});
+  console.log(allData[allData.length - 1]);
+
+}
+  
+
 
