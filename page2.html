@@ -28,5 +28,38 @@
 			</nav>
 		</header>
 	</div>
+	<!-- content -->
+	<div class="wrapper row2">
+		<div id="container" class="clear">
+			<form action="load-csv.js" method="get">
+				<p>Microchip: <input type="number" name="microchip" size="30"></p>
+				<p>Species:
+					<input type="radio" name="especie" value="canino">Canino
+					<input type="radio" name="especie" value="felino">Felino 
+					<p>Sex:
+						<input type="radio" name="Sexo" value="hembra">Hembra
+						<input type="radio" name="Sexo" value="macho">Macho
+					</p>Size
+					<select name="size">
+						<option value="0">Seleccionar tamaño</option> 
+						<option value="1">Miniatura</option> 
+						<option value="2">Pequeño</option> 
+						<option value="3">Mediano</option>
+						<option value="4">Grande</option> 
+					</select>
+				</p>
+				<p>Potent Dangerous:
+					<input type="radio" name="booleano" value="SI">Si
+					<input type="radio" name="booleano" value="NO">No	
+				</p>
+				<p>Neighborhood: <input type="text" name="microchip" placeholder="Escriba la localidad" size="30"></p>
+				<p>
+					<input type="submit" value="Enviar">
+					<input type="reset" value="Borrar">
+				</p>
+			</form>
+
+		</div>
+	</div>
 </body>
 </html>
