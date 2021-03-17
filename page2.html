@@ -41,10 +41,10 @@
 					</select>
 					<p>Sex:
 						<select id="sex" name="sex">
-						<option value="0">Seleccionar sexo</option> 
-						<option value="HEMBRA">Hembra</option> 
-						<option value="MACHO">Macho</option> 
-					</select>
+							<option value="0">Seleccionar sexo</option> 
+							<option value="HEMBRA">Hembra</option> 
+							<option value="MACHO">Macho</option> 
+						</select>
 					</p>Size
 					<select id="size" name="Tam">
 						<option value="0">Seleccionar tamaño</option> 
@@ -61,14 +61,28 @@
 						<option value="NO">No</option> 
 					</select>
 				</p>
-				<p>Neighborhood: <input id="localidad" type="text" name="localidad" placeholder="Escriba la localidad" size="30"></p>
-				<p>
-					<input name="enviar" type="button" value = "enviar" id="enviar" onclick="addPet()"/>
-					<input type="reset" value="Borrar">
+				<p>Neighborhood: <input id="localidad" type="text" name="localidad" placeholder="Escriba la localidad" size="30">
 				</p>
-			</form>
+				<p>Race: <input id="raza" type="text" name="Raza" placeholder="Escriba la raza" size="30">
+					<p/>
+					<p>
+						Owner: <input id="own" type="text" name="Dueño" placeholder="Escriba el nombre del dueño" size="30">
+					</p>
+					<p>
+						Address: <input id="direccion" type="text" name="direccion" placeholder="Escriba la direccion" size="30">
+					</p>
+					<p>
+						Image: <input type="file" id="file" accept="image/*" onchange="addPet()">
+						<br>
+						<img id="img"/>
+					</p>
+					<p>
+						<input name="enviar" type="button" value = "enviar" id="enviar" onclick="addPet()"/>
+						<input type="reset" value="Borrar">
+					</p>
+				</form>
 
+			</div>
 		</div>
-	</div>
-</body>
-</html>
+	</body>
+	</html>
