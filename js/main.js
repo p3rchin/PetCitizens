@@ -94,3 +94,30 @@ var address = document.getElementById("direccion").value;
   dat.unshift({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood, "race" : race, "owner" : owner, "address" : address, "photo" : imagen});
   console.log(dat[0]);
 }
+
+function modifyPet(){
+
+  var imagen = document.getElementById("file1").files[0];
+  var reader = new FileReader();
+  if (file1) {
+   reader.readAsDataURL(imagen); 
+ }else{
+ }
+  var microchip1 = document.getElementById("micro1").value;
+  var race1 =  document.getElementById("raza1").value;
+  var owner1 =  document.getElementById("own1").value;
+  var address1 =  document.getElementById("direccion1").value;
+ 
+
+  for (var i = 0; i < dat.length; i++) {
+   if(dat[i]["microchip"] == microchip1){
+     dat[i] = {...dat[i],race : race1};
+     dat[i] = {...dat[i],owner : owner1};
+     dat[i] = {...dat[i],address : address1};
+     dat[i] = {...dat[i],photo : imagen};
+     console.log(dat[i]);
+     break; 
+   }
+ }
+
+}
