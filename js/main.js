@@ -91,6 +91,6 @@ var race = document.getElementById("raza").value;
 var owner = document.getElementById("own").value;
 var address = document.getElementById("direccion").value;
 
-  dat.push({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood, "race" : race, "owner" : owner, "address" : address, "photo" : imagen});
-  console.log(dat[dat.length - 1]);
+  dat.unshift({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood, "race" : race, "owner" : owner, "address" : address, "photo" : imagen});
+  console.log(dat[0]);
 }
