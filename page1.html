@@ -22,77 +22,135 @@
       <nav>
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="page1.html">Ver mascotas</a></li>
-          <li><a href="page2.html">Agregar mascota</a></li>
-          <li><a href="#">Actualizar información</a></li>
-          <li class="last"><a href="#">Eliminar información</a></li>
+          <li><a class="page-scroll" href="#agregarmascota">Agregar mascota</a></li>
+          <li><a class="page-scroll" href="#actualizarmascota">Actualizar mascota</a></li>
+          <li class="last"><a href="#tabla">Ver información</a></li>
         </ul>
       </nav>
     </header>
   </div>
 
 
-  <div class="wrapper row2">
-		<div id="container" class="clear">
-			<form action="">
-				<p>Microchip: <input type="number" id="micro" name="microchip" size="30"></p>
-				<p>Species:
-					<select id="Species" name="Species">
-						<option value="0">Seleccionar especie</option> 
-						<option value="CANINO">Canino</option> 
-						<option value="FELINO">Felino</option> 
-					</select>
-					<p>Sex:
-						<select id="sex" name="sex">
-							<option value="0">Seleccionar sexo</option> 
-							<option value="HEMBRA">Hembra</option> 
-							<option value="MACHO">Macho</option> 
-						</select>
-					</p>Size
-					<select id="size" name="Tam">
-						<option value="0">Seleccionar tamaño</option> 
-						<option value="MINIATURA">Miniatura</option> 
-						<option value="PEQUEÑO">Pequeño</option> 
-						<option value="MEDIANO">Mediano</option>
-						<option value="GRANDE">Grande</option> 
-					</select>
-				</p>
-				<p>Potent Dangerous:
-					<select id="danger" name="PotentDangerous">
-						<option value="0">Seleccionar si es peligroso</option> 
-						<option value="SI">Si</option> 
-						<option value="NO">No</option> 
-					</select>
-				</p>
-				<p>Neighborhood: <input id="localidad" type="text" name="localidad" placeholder="Escriba la localidad" size="30">
-				</p>
-				<p>Race: <input id="raza" type="text" name="Raza" placeholder="Escriba la raza" size="30">
-					<p/>
-					<p>
-						Owner: <input id="own" type="text" name="Dueño" placeholder="Escriba el nombre del dueño" size="30">
-					</p>
-					<p>
-						Address: <input id="direccion" type="text" name="direccion" placeholder="Escriba la direccion" size="30">
-					</p>
-					<p>
-						Image: <input type="file" id="file" accept="image/*" onchange="addPet()">
-						<br>
-						<img id="img"/>
-					</p>
-					<p>
-						<input name="enviar" type="button" value = "Enviar" id="enviar" onclick="addPet()"/>
-						<input type="reset" value="Borrar">
-					</p>
-				</form>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
+ 
+  <div id="agregarmascota" class="container">
+    <h1 align="center">Agregar Mascotas</h1>
+    <br>
+    <form>
+     <div class="form-group">
+      <p>
+        <label>Escriba el numero de microchip:</label> <br>
+         <input class="form-control" type="number" id="micro" name="microchip" size="30" required>
+      </p>
+      <p>
+        <label>Elija la especie:</label> <br>
+        <select class="custom-select my-1 mr-sm-2" id="Species" name="Species" required>
+          <option value="0">Seleccionar especie</option> 
+          <option value="CANINO">Canino</option> 
+          <option value="FELINO">Felino</option> 
+        </select>
+      </p>
+      <p>
+          <label>Elija el sexo:</label> <br>
+          <select class="custom-select my-1 mr-sm-2" id="sex" name="sex" required>
+            <option value="0">Seleccionar sexo</option> 
+            <option value="HEMBRA">Hembra</option> 
+            <option value="MACHO">Macho</option> 
+          </select>
+        </p>
+        <p>
+          <label>Elija el tamaño</label> <br>
+        <select class="custom-select my-1 mr-sm-2" id="size" name="Tam" required>
+          <option value="0">Seleccionar tamaño</option> 
+          <option value="MINIATURA">Miniatura</option> 
+          <option value="PEQUEÑO">Pequeño</option> 
+          <option value="MEDIANO">Mediano</option>
+          <option value="GRANDE">Grande</option> 
+        </select>
+      </p>
+      <p>
+        <label>Elija si su mascota es peligrosa:</label> <br>
+        <select class="custom-select my-1 mr-sm-2" id="danger" name="PotentDangerous" required>
+          <option value="0">Seleccionar si es peligroso</option> 
+          <option value="SI">Si</option> 
+          <option value="NO">No</option> 
+        </select>
+      </p>
+      <p>
+        <label>Escriba la localidad</label> <br>
+        <input class="form-control" id="localidad" type="text" name="localidad" placeholder="Escriba la localidad" size="30" required>
+      </p>
+      <p>
+        <label>Escriba la raza:</label> <br>
+        <input class="form-control" id="raza" type="text" name="Raza" placeholder="Escriba la raza" size="30" required>
+      </p>
+        <p>
+          <label>Escriba el nombre del dueño:</label> <br>
+           <input class="form-control" id="own" type="text" name="Dueño" placeholder="Escriba el nombre del dueño" size="30" required>
+        </p>
+        <p>
+          <label>Escriba la direccion:</label> <br>
+           <input class="form-control" id="direccion" type="text" name="direccion" placeholder="Escriba la direccion" size="30" required>
+        </p>
+        <p>
+          <label>Inserte la imagen:</label> <br>
+           <input class="form-control" type="file" id="file" accept="image/*" required>
+          <br>
+          <img id="img"/>
+        </p>
+        <div class="container my-3 bg-light">
+        <div class="col-md-12 text-center">
+          <input class="btn btn-success" name="enviar" type="button" value = "Enviar" id="enviar" onclick="addPet()"/>
+          <input class="btn btn-danger" type="reset" value="Borrar">
+      </div>
+      </div>
+    </div>
+  </form>
+<br>
+  <div id="actualizarmascota" class="container">
+    <h1 align="center">Actualizar Mascotas</h1>
+    <br>
+    <form>
+     <div class="form-group">
+      <p> 
+        <label>Escriba el número de microchip para actualizar:</label> <br>
+        <input  class="form-control" type="number" id="micro1" name="microchip" size="30" required>
+      </p>
+        <p>
+          <label>Escriba la raza:</label> <br>
+          <input  class="form-control" id="raza1" type="text" name="Raza" placeholder="Escriba la raza" size="30" required>
+        </p>
+        <p>
+          <label>Escriba el nombre del dueño:</label> <br>
+          <input  class="form-control" id="own1" type="text" name="Dueño" placeholder="Escriba el nombre del dueño" size="30" required>
+        </p>
+        <p>
+          <label>Escriba la dirección:</label> <br>
+           <input  class="form-control"id="direccion1" type="text" name="direccion" placeholder="Escriba la direccion" size="30" required>
+        </p>
+        <p>
+          <label>Inserte la imagen:</label> <br>
+           <input  class="form-control"type="file" id="file1" accept="image/*" required>
+          <br>
+          <img id="img"/>
+        </p>
+        <div class="container my-3 bg-light">
+          <div class="col-md-12 text-center">
+          <input class="btn btn-success" name="enviar" type="button" value = "Enviar" id="enviar1" onclick="modifyPet()"/>
+          <input class="btn btn-danger" type="reset" value="Borrar">
+       </div>
+       </div>
+    </div>
+  </form>
 
-			</div>
-		</div>
-  </div>
+
 
   <!-- content -->
-  <div class="wrapper row2">
+  
+  <div id="tabla" class="wrapper row2">
     <div id="container" class="clear">
-
+      <h1 align="center">Ver Información</h1>
       <table  id="table" class="content-table">
         <thead>
           <tr>
