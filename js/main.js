@@ -89,6 +89,7 @@ var owner = document.getElementById("own").value;
 var address = document.getElementById("direccion").value;
 
   dat.unshift({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood, "race" : race, "owner" : owner, "address" : address, "photo" : imagen});
+  alert("Datos de la nueva mascota"+"\nMicrochip: " + microchip+ "\nEspecie: " + species+ "\nSexo: " + sex + "\nTamaño: " + size + "\nPotencial peligroso: " + potentDangerous+ "\nLocalidad: " + neighborhood+ "\nRaza: " + race+ "\nDueño: " + owner + "\nDirección: " + address+ "\nFoto: "+  imagen);
   console.log(dat[0]);
 
   let tablaProducto = document.getElementById('table');
@@ -170,6 +171,8 @@ function modifyPet(){
      break; 
    }
  }
+ alert("Actualizacion de mascota para: "+"\nMicrochip: " + microchip1+ "\nRaza: " + race1+ "\nDueño: " + owner1 + "\nDirección: " + address1 + "\nFoto: "+  imagen);
+ 
 
  
  let tablaProducto = document.getElementById('table');
