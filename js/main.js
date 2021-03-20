@@ -147,6 +147,7 @@ var address = document.getElementById("direccion").value;
 
 function modifyPet(){
 
+
   var imagen = document.getElementById("file1").files[0];
   var reader = new FileReader();
   if (file1) {
@@ -169,4 +170,59 @@ function modifyPet(){
      break; 
    }
  }
+
+ 
+ let tablaProducto = document.getElementById('table');
+ let cuerpoTabla = document.createElement('tbody');
+ 
+ dat.forEach(p => {
+
+  let fila = document.createElement('tr');
+
+  let td = document.createElement('td');
+  td.innerText = p.microchip;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = p.species;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = p.sex;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = p.size;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = p.potentDangerous;
+  fila.appendChild(td);
+  td = document.createElement('td');
+  td.innerText = p.neighborhood;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = p.race;
+  fila.appendChild(td);
+
+
+  td = document.createElement('td');
+  td.innerText = p.owner;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = p.address;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = p.photo;
+  fila.appendChild(td);
+
+
+
+  cuerpoTabla.appendChild(fila);
+});
+
+ tablaProducto.appendChild(cuerpoTabla);
 }

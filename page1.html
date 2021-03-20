@@ -7,11 +7,61 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/styletable.css">
-   
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    }
+    
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    
+    #myBtn:hover {
+      background-color: #555;
+    }
+    </style>
 
 </head>
 
 <body>
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
   <div class="wrapper row1">
 
     <header id="header" class="clear">
@@ -33,7 +83,6 @@
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"> </script>
- 
   <div id="agregarmascota" class="container">
     <h1 align="center">Agregar Mascotas</h1>
     <br>
@@ -99,14 +148,16 @@
           <br>
           <img id="img"/>
         </p>
-        <div class="container my-3 bg-light">
         <div class="col-md-12 text-center">
-          <input class="btn btn-success" name="enviar" type="submit" value = "Enviar" id="enviar" onclick="addPet()"/>
-          <input class="btn btn-danger" type="reset" value="Borrar">
-      </div>
+          <input name="enviar" type="button" value = "Enviar" id="enviar" onclick="addPet()"/>
+          <input type="reset" value="Borrar">
       </div>
     </div>
   </form>
+
+  <section class="clear">
+  </section>
+
 <br>
   <div id="actualizarmascota" class="container">
     <h1 align="center">Actualizar Mascotas</h1>
@@ -135,21 +186,19 @@
           <br>
           <img id="img"/>
         </p>
-        <div class="container my-3 bg-light">
           <div class="col-md-12 text-center">
-          <input class="btn btn-success" name="enviar" type="submit" value = "Enviar" id="enviar1" onclick="modifyPet()"/>
-          <input class="btn btn-danger" type="reset" value="Borrar">
-       </div>
+          <input  name="enviar" type="button" value="Enviar" id="enviar1" onclick="modifyPet()"/>
+          <input  type="reset" value="Borrar">
        </div>
     </div>
   </form>
 
-
+  <br>
+  <br>
 
   <!-- content -->
   
   <div id="tabla" class="wrapper row2">
-    <div id="container" class="clear">
       <h1 align="center">Ver Información</h1>
       <table  id="table" class="content-table">
         <thead>
