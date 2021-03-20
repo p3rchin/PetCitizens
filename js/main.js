@@ -1,12 +1,9 @@
-
 var dat = []
 var aa = localStorage.getItem('data');
 dat = JSON.parse(aa);
 
 
 printTable();
-
-
 
 function printTable(){
 
@@ -93,6 +90,59 @@ var address = document.getElementById("direccion").value;
 
   dat.unshift({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood, "race" : race, "owner" : owner, "address" : address, "photo" : imagen});
   console.log(dat[0]);
+
+  let tablaProducto = document.getElementById('table');
+  let cuerpoTabla = document.createElement('tbody');
+  let fila = document.createElement('tr');
+
+  let td = document.createElement('td');
+  td.innerText = microchip;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = species;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = sex;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = size;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = potentDangerous;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = neighborhood;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = race;
+  fila.appendChild(td);
+
+
+  td = document.createElement('td');
+  td.innerText = owner;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = address;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = imagen;
+  fila.appendChild(td);
+
+
+
+  cuerpoTabla.appendChild(fila);
+
+  tablaProducto.appendChild(cuerpoTabla);
+
+
 }
 
 function modifyPet(){
@@ -119,5 +169,4 @@ function modifyPet(){
      break; 
    }
  }
-
 }

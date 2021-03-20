@@ -5,10 +5,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/styletable.css">
-
-
+   
 
 </head>
 
@@ -31,6 +30,65 @@
       </nav>
     </header>
   </div>
+
+
+  <div class="wrapper row2">
+		<div id="container" class="clear">
+			<form action="">
+				<p>Microchip: <input type="number" id="micro" name="microchip" size="30"></p>
+				<p>Species:
+					<select id="Species" name="Species">
+						<option value="0">Seleccionar especie</option> 
+						<option value="CANINO">Canino</option> 
+						<option value="FELINO">Felino</option> 
+					</select>
+					<p>Sex:
+						<select id="sex" name="sex">
+							<option value="0">Seleccionar sexo</option> 
+							<option value="HEMBRA">Hembra</option> 
+							<option value="MACHO">Macho</option> 
+						</select>
+					</p>Size
+					<select id="size" name="Tam">
+						<option value="0">Seleccionar tamaño</option> 
+						<option value="MINIATURA">Miniatura</option> 
+						<option value="PEQUEÑO">Pequeño</option> 
+						<option value="MEDIANO">Mediano</option>
+						<option value="GRANDE">Grande</option> 
+					</select>
+				</p>
+				<p>Potent Dangerous:
+					<select id="danger" name="PotentDangerous">
+						<option value="0">Seleccionar si es peligroso</option> 
+						<option value="SI">Si</option> 
+						<option value="NO">No</option> 
+					</select>
+				</p>
+				<p>Neighborhood: <input id="localidad" type="text" name="localidad" placeholder="Escriba la localidad" size="30">
+				</p>
+				<p>Race: <input id="raza" type="text" name="Raza" placeholder="Escriba la raza" size="30">
+					<p/>
+					<p>
+						Owner: <input id="own" type="text" name="Dueño" placeholder="Escriba el nombre del dueño" size="30">
+					</p>
+					<p>
+						Address: <input id="direccion" type="text" name="direccion" placeholder="Escriba la direccion" size="30">
+					</p>
+					<p>
+						Image: <input type="file" id="file" accept="image/*" onchange="addPet()">
+						<br>
+						<img id="img"/>
+					</p>
+					<p>
+						<input name="enviar" type="button" value = "Enviar" id="enviar" onclick="addPet()"/>
+						<input type="reset" value="Borrar">
+					</p>
+				</form>
+
+			</div>
+		</div>
+  </div>
+
   <!-- content -->
   <div class="wrapper row2">
     <div id="container" class="clear">
@@ -52,7 +110,6 @@
         </thead>
       </table>
     </div>
-  </div>
   <!-- Footer -->
   <div class="wrapper row3">
     <footer id="footer" class="clear">
@@ -61,11 +118,11 @@
     </footer>
   </div>
 
-
   <!-- JQUERY -->
   <script src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">
 </script>
+
 <!-- DATATABLES -->
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
 </script>
