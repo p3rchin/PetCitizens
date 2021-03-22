@@ -17,54 +17,54 @@ function printTable(){
    dat [i] ["photo"]  = 'Sin asignar';
  };
 
- dat.forEach(p => {
+ for (var i = 0; i < dat.length; i++) {
 
   let fila = document.createElement('tr');
 
   let td = document.createElement('td');
-  td.innerText = p.microchip;
+  td.innerText = dat[i].microchip;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.species;
+  td.innerText = dat[i].species;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.sex;
+  td.innerText = dat[i].sex;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.size;
+  td.innerText = dat[i].size;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.potentDangerous;
+  td.innerText = dat[i].potentDangerous;
   fila.appendChild(td);
   td = document.createElement('td');
-  td.innerText = p.neighborhood;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = p.race;
-  fila.appendChild(td);
-
-
-  td = document.createElement('td');
-  td.innerText = p.owner;
+  td.innerText = dat[i].neighborhood;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.address;
+  td.innerText = dat[i].race;
+  fila.appendChild(td);
+
+
+  td = document.createElement('td');
+  td.innerText = dat[i].owner;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.photo;
+  td.innerText = dat[i].address;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = dat[i].photo;
   fila.appendChild(td);
 
 
 
   cuerpoTabla.appendChild(fila);
-});
+}
 
  tablaProducto.appendChild(cuerpoTabla);
 }
@@ -88,63 +88,79 @@ var race = document.getElementById("raza").value;
 var owner = document.getElementById("own").value;
 var address = document.getElementById("direccion").value;
 
-  dat.unshift({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood, "race" : race, "owner" : owner, "address" : address, "photo" : imagen});
-  alert("Datos de la nueva mascota"+"\nMicrochip: " + microchip+ "\nEspecie: " + species+ "\nSexo: " + sex + "\nTamaño: " + size + "\nPotencial peligroso: " + potentDangerous+ "\nLocalidad: " + neighborhood+ "\nRaza: " + race+ "\nDueño: " + owner + "\nDirección: " + address+ "\nFoto: "+  imagen);
-  console.log(dat[0]);
+if(microchip != "" && species !="0"  && sex !="0" && size != "0" 
+        && potentDangerous !="0" && neighborhood !="" && race != "" 
+        && owner != "" && address != ""){
 
-  let tablaProducto = document.getElementById('table');
-  let cuerpoTabla = document.createElement('tbody');
-  let fila = document.createElement('tr');
+          for (var i = 0; i < dat.length; i++) {
+            if(dat[i]["microchip"] == microchip){
+alert("Ya una mascota posee este microchip. Intente con uno nuevo");
+break;
+            }else{
+              dat.unshift({"microchip" : microchip, "species" : species, "sex" : sex, "size" : size, "potentDangerous" : potentDangerous, "neighborhood" : neighborhood, "race" : race, "owner" : owner, "address" : address, "photo" : imagen});
+              alert("Datos de la nueva mascota"+"\nMicrochip: " + microchip+ "\nEspecie: " + species+ "\nSexo: " + sex + "\nTamaño: " + size + "\nPotencial peligroso: " + potentDangerous+ "\nLocalidad: " + neighborhood+ "\nRaza: " + race+ "\nDueño: " + owner + "\nDirección: " + address+ "\nFoto: "+  imagen);
+              console.log(dat[0]);
+            
+              let tablaProducto = document.getElementById('table');
+              let cuerpoTabla = document.createElement('tbody');
+              let fila = document.createElement('tr');
+            
+              let td = document.createElement('td');
+              td.innerText = microchip;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = species;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = sex;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = size;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = potentDangerous;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = neighborhood;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = race;
+              fila.appendChild(td);
+            
+            
+              td = document.createElement('td');
+              td.innerText = owner;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = address;
+              fila.appendChild(td);
+            
+              td = document.createElement('td');
+              td.innerText = imagen;
+              fila.appendChild(td);
+            
+            
+            
+              cuerpoTabla.appendChild(fila);
+            
+              tablaProducto.appendChild(cuerpoTabla);         
+              break;   
+            }
+          }
 
-  let td = document.createElement('td');
-  td.innerText = microchip;
-  fila.appendChild(td);
+ 
 
-  td = document.createElement('td');
-  td.innerText = species;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = sex;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = size;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = potentDangerous;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = neighborhood;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = race;
-  fila.appendChild(td);
-
-
-  td = document.createElement('td');
-  td.innerText = owner;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = address;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = imagen;
-  fila.appendChild(td);
-
-
-
-  cuerpoTabla.appendChild(fila);
-
-  tablaProducto.appendChild(cuerpoTabla);
-
-
-}
+        } else{
+          alert("No puede dejar ningún espacio por llenar en el formulario");
+      }
+    }
 
 function modifyPet(){
 
@@ -160,6 +176,8 @@ function modifyPet(){
   var owner1 =  document.getElementById("own1").value;
   var address1 =  document.getElementById("direccion1").value;
  
+  if(microchip1 != "" && race1 != "" && owner1 != "" && address1 != ""){
+
 
   for (var i = 0; i < dat.length; i++) {
    if(dat[i]["microchip"] == microchip1){
@@ -168,64 +186,69 @@ function modifyPet(){
      dat[i] = {...dat[i],address : address1};
      dat[i] = {...dat[i],photo : imagen};
      console.log(dat[i]);
-     break; 
-   }
- }
- alert("Actualizacion de mascota para: "+"\nMicrochip: " + microchip1+ "\nRaza: " + race1+ "\nDueño: " + owner1 + "\nDirección: " + address1 + "\nFoto: "+  imagen);
- 
 
- 
- let tablaProducto = document.getElementById('table');
+
+var table = document.querySelector('#table');
+table.innerHTML = '';
+
+     let tablaProducto = document.getElementById('table');
  let cuerpoTabla = document.createElement('tbody');
  
- dat.forEach(p => {
+  for (var i = 0; i < dat.length; i++) {
 
   let fila = document.createElement('tr');
 
   let td = document.createElement('td');
-  td.innerText = p.microchip;
+  td.innerText = dat[i].microchip;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.species;
+  td.innerText = dat[i].species;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.sex;
+  td.innerText = dat[i].sex;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.size;
+  td.innerText = dat[i].size;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.potentDangerous;
+  td.innerText = dat[i].potentDangerous;
   fila.appendChild(td);
   td = document.createElement('td');
-  td.innerText = p.neighborhood;
-  fila.appendChild(td);
-
-  td = document.createElement('td');
-  td.innerText = p.race;
-  fila.appendChild(td);
-
-
-  td = document.createElement('td');
-  td.innerText = p.owner;
+  td.innerText = dat[i].neighborhood;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.address;
+  td.innerText = dat[i].race;
+  fila.appendChild(td);
+
+
+  td = document.createElement('td');
+  td.innerText = dat[i].owner;
   fila.appendChild(td);
 
   td = document.createElement('td');
-  td.innerText = p.photo;
+  td.innerText = dat[i].address;
+  fila.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerText = dat[i].photo;
   fila.appendChild(td);
 
 
 
   cuerpoTabla.appendChild(fila);
-});
+}
 
  tablaProducto.appendChild(cuerpoTabla);
+     break; 
+   }
+ }
+ alert("Actualizacion de mascota para: "+"\nMicrochip: " + microchip1+ "\nRaza: " + race1+ "\nDueño: " + owner1 + "\nDirección: " + address1 + "\nFoto: "+  imagen);
+}else{
+  alert("No puede dejar ningún espacio por llenar en el formulario");
+}
 }
